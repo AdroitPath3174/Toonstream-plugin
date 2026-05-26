@@ -1,19 +1,34 @@
-version = 1
+import com.lagradost.cloudstream3.plugins.CloudstreamExtension
+
+plugins {
+    id("com.android.library")
+    kotlin("android")
+    id("com.lagradost.cloudstream3.plugins")
+}
 
 cloudstream {
-    language = "en"
+    name = "ToonStream"
+    description = "ToonStream extension for Cloudstream"
+    version = 1
+    authors = listOf("Sunil Kumar")
+    lang = "hi"
+    type = CloudstreamExtension.Types.Provider
+}
 
-    authors = listOf(
-        "Sunil"
-    )
+android {
+    namespace = "com.toonstream"
+    compileSdk = 33 
 
-    status = 1
+    defaultConfig {
+        minSdk = 21
+    }
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+}
 
-    tvTypes = listOf(
-        "Anime"
-    )
-
-    iconUrl = "https://toonstream.vip/favicon.ico"
-
-    description = "ToonStream Extension"
+dependencies {
+    implementation(kotlin("stdlib"))
+    implementation("com.github.recloudstream:cloudstream:master-SNAPSHOT")
 }
