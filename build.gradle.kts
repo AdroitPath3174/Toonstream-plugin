@@ -1,20 +1,17 @@
-buildscript {
-    repositories {
-        google()
-        mavenCentral()
-        maven("https://jitpack.io")
-    }
-
-    dependencies {
-        classpath("com.android.tools.build:gradle:8.1.0")
-        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.10")
-    }
+plugins {
+    id("com.lagradost.cloudstream3.gradle") version "1.0.0"
 }
 
-allprojects {
-    repositories {
-        google()
-        mavenCentral()
-        maven("https://jitpack.io")
-    }
+cloudstream {
+    language = "en"
+    description = "Toonstream Plugin"
+    authors = listOf("Sunil")
+
+    status = 1
+    tvTypes = listOf(
+        "Anime",
+        "Cartoon"
+    )
+
+    iconUrl = "https://www.google.com/favicon.ico"
 }
