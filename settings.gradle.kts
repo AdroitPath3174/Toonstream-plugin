@@ -1,3 +1,18 @@
 rootProject.name = "Toonstream-plugin"
 
-include(":Toonstream")
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+    }
+}
+
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.PREFER_SETTINGS)
+
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
